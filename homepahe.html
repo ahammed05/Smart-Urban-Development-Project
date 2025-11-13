@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart City Home Page</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f0f8ff;
+        color: #333;
+    }
+
+    /* Glassmorphism Navbar */
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 15px 0;
+        position: fixed;
+        width: 95%;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    }
+
+    .navbar ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .navbar li {
+        position: relative;
+    }
+
+    .navbar a {
+        display: block;        
+       
+        color: #fff;
+        text-decoration: none;
+        padding: 12px 20px;
+        margin: 0 5px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .navbar a::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+
+    .navbar a:hover {
+        color: #00BFFF;
+        transform: scale(1.2) rotate(-3deg);
+    }
+
+    .navbar a:hover::before {
+        width: 120%;
+        height: 300%;
+    }
+
+    /* Dropdown menu with navy background */
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #001f4d; /* Navy blue */
+        border-radius: 10px;
+        min-width: 220px;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        z-index: 100;
+    }
+
+    .dropdown a {
+        margin: 5px;
+        padding: 10px 15px;
+        color: #fff;
+        font-weight: normal;
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+
+    .dropdown a:hover {
+        background: #004080; /* Slightly lighter navy */
+        transform: scale(1.05);
+    }
+
+    /* Show dropdown on hover */
+    .navbar li:hover .dropdown {
+        display: flex;
+    }
+
+    /* Sections */
+    section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 100px 20px 50px 20px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+
+    section h2 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        color: #fff;
+    }
+
+    section p {
+        font-size: 20px;
+        max-width: 800px;
+        color: #fff;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+
+    /* Section backgrounds */
+    #home { background-image: url('homePaheImmage.jpg'); }
+    #notice { background-image: url('noticeImage.jpg'); }
+    #service { background-image: url('serviceImage.jpg'); }
+    #department { background-image: url('departmentImage.jpg'); }
+    #project { background-image: url('projectImage.jpg'); }
+    #registration { background-image: url('registrationImage.jpg'); }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+        .navbar ul {
+            flex-direction: column;
+            width: 100%;
+        }
+        .navbar li {
+            width: 100%;
+        }
+        .navbar a {
+            margin: 5px 0;
+            text-align: center;
+        }
+        .dropdown {
+            position: relative;
+        }
+        section h2 { font-size: 35px; }
+        section p { font-size: 16px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#notice">Notice</a></li>
+        <li>
+            <a href="#service">Service</a>
+            <div class="dropdown">
+                <a href="#">Bill Payment</a>
+                <a href="#">Complaint</a>
+                <a href="#">Apply Certificate</a>
+            </div>
+        </li>
+        <li>
+            <a href="#department">Department</a>
+            <div class="dropdown">
+                <a href="#">Waste Management Department</a>
+                <a href="#">Energy Monitoring Department</a>
+                <a href="#">Air Quality & Pollution Department</a>
+                <a href="#">Emergency Department</a>
+                <a href="#">Traffic Department</a>
+            </div>
+        </li>
+        <li>
+            <a href="#project">Project</a>
+            <div class="dropdown">
+                <a href="#">End Project</a>
+                <a href="#">Under Construction Project</a>
+                <a href="#">Upcoming Project</a>
+            </div>
+        </li>
+        <li><a href="#registration">Registration</a></li>
+    </ul>
+</div>
+
+<!-- Sections -->
+<section id="home">
+    <div>
+        
+    </div>
+</section>
+
+<section id="notice">
+    <div>
+        <h2>Notice</h2>
+        <p>Check important announcements, alerts, and updates from the city administration.</p>
+    </div>
+</section>
+
+<section id="service">
+    <div>
+        <h2>Services</h2>
+        <p>Access services like complaints, bill payments, and applying for certificates.</p>
+    </div>
+</section>
+
+<section id="department">
+    <div>
+        <h2>Departments</h2>
+        <p>Explore city departments and their functions.</p>
+    </div>
+</section>
+
+<section id="project">
+    <div>
+        <h2>Projects</h2>
+        <p>View ongoing, completed, and upcoming city projects.</p>
+    </div>
+</section>
+
+<section id="registration">
+    <div>
+        <h2>Registration</h2>
+        <p>Register as a resident or user to access personalized city services and updates.</p>
+    </div>
+</section>
+
+</body>
+</html>
